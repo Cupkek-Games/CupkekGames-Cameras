@@ -1,18 +1,20 @@
 {
   "name": "com.cupkekgames.cameras",
   "displayName": "CupkekGames Cameras",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "CupkekGames",
     "url": "https://www.docs.cupkek.games"
   },
   "unity": "6000.0",
   "documentationUrl": "https://docs.cupkek.games/",
-  "description": "Cinemachine wrappers for CupkekGames games. CinemachineManager + ScreenShakeType database for impulse-based screen shake by typed key.",
+  "description": "Camera-relative helpers: CinemachineManager + ScreenShakeType database for impulse-based screen shake; Billboard runtime component (face the camera); ViewportPositioner editor-time component (place by viewport X/Y + distance with size compensation).",
   "keywords": [
     "Camera",
     "Cinemachine",
     "ScreenShake",
+    "Billboard",
+    "Viewport",
     "CupkekGames"
   ],
   "dependencies": {}
