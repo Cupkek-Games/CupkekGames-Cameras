@@ -1,10 +1,5 @@
 using UnityEngine;
-using CupkekGames.AddressableAssets;
-using CupkekGames.SceneManagement;
-using CupkekGames.Sequencer;
 using CupkekGames.Services;
-using CupkekGames.Settings;
-using CupkekGames.GameSave;
 using Unity.Cinemachine;
 using CupkekGames.KeyValueDatabases;
 
@@ -12,7 +7,8 @@ namespace CupkekGames.Cameras
 {
     public class CinemachineManager : ServiceProvider
     {
-        [SerializeField] private KeyValueDatabase<CinemachineScreenShakeType, CinemachineImpulseSource> _screenShakes;
+        [SerializeField] private KeyValueDatabase<string, CinemachineImpulseSource> _screenShakes;
+
         public override void RegisterServices()
         {
             ServiceLocator.Register(new ServiceDescriptor(this));
@@ -23,10 +19,11 @@ namespace CupkekGames.Cameras
             ServiceLocator.Remove(this);
         }
 
-        public void ShakeCamera(CinemachineScreenShakeType type, float intensity, float duration = 0.2f)
+        public void ShakeCamera(string kind, float intensity, float duration = 0.2f)
         {
-            _screenShakes.GetValue(type).ImpulseDefinition.ImpulseDuration = duration;
-            _screenShakes.GetValue(type).GenerateImpulse(intensity);
+            CinemachineImpulseSource source = _screenShakes.GetValue(kind);
+            source.ImpulseDefinition.ImpulseDuration = duration;
+            source.GenerateImpulse(intensity);
         }
     }
 }
