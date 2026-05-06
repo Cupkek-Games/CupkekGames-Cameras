@@ -1,3 +1,9 @@
+// CinemachineManager wraps com.unity.cinemachine impulse sources. The bridge
+// only compiles when Cinemachine is installed (CINEMACHINE_INSTALLED define
+// set by versionDefines). The rest of the Cameras package (Billboard,
+// ViewportPositioner, CinemachineScreenShakeKinds string constants) builds
+// independently.
+#if CINEMACHINE_INSTALLED
 using UnityEngine;
 using CupkekGames.Services;
 using Unity.Cinemachine;
@@ -27,3 +33,4 @@ namespace CupkekGames.Cameras
         }
     }
 }
+#endif
