@@ -6,7 +6,7 @@ Cinemachine wrappers for CupkekGames games. Drives Cinemachine impulse-based scr
 
 **Runtime** (`CupkekGames.Cameras.asmdef`)
 
-- `CinemachineManager` — `ServiceProvider` MonoBehaviour holding a `KeyValueDatabase<string, CinemachineImpulseSource>`. Call `ShakeCamera(kind, intensity, duration)` to fire a kind-keyed impulse.
+- `CinemachineManager` — `ServiceProvider` MonoBehaviour holding a `KeyValueDatabase<string, CinemachineImpulseSource>`. Call `ShakeCamera(kind, intensity, duration)` to fire a kind-keyed impulse. `Mute()` returns a scope that turns every shake off until disposed (scopes nest; for captures). `SetShake(kind, source)` sets a kind's impulse source from code, for rigs built without the inspector (an editor sandbox, a test).
 - `CinemachineScreenShakeKinds` — reserved string-kind constants (`Default`, `Critical`, `Rumble`). Games are free to add their own keys to the database.
 
 ## Dependencies
