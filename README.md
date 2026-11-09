@@ -8,6 +8,9 @@ Cinemachine wrappers for CupkekGames games. Drives Cinemachine impulse-based scr
 
 - `CinemachineManager` — `ServiceProvider` MonoBehaviour holding a `KeyValueDatabase<string, CinemachineImpulseSource>`. Call `ShakeCamera(kind, intensity, duration)` to fire a kind-keyed impulse. `Mute()` returns a scope that turns every shake off until disposed (scopes nest; for captures). `SetShake(kind, source)` sets a kind's impulse source from code, for rigs built without the inspector (an editor sandbox, a test).
 - `CinemachineScreenShakeKinds` — reserved string-kind constants (`Default`, `Critical`, `Rumble`). Games are free to add their own keys to the database.
+- `Billboard` — turns a world-space panel to face the camera every LateUpdate, after Cinemachine has moved it (no jitter against a moving camera). The camera is the serialized one, else `Camera.main`, resolved once in Awake.
+- `DistanceScale` — scales a world-space panel with its distance to the camera (min/max distance, min/max scale, optional parent-scale compensation). `Configure(...)` sets the values from a game's tuning asset. Same LateUpdate order and camera rule as `Billboard`.
+- `ViewportPositioner` — editor-time component: places an object by viewport X/Y and distance, with size compensation.
 
 ## Dependencies
 

@@ -8,7 +8,7 @@
   },
   "unity": "6000.0",
   "documentationUrl": "https://docs.cupkek.games/",
-  "description": "Camera-relative helpers: CinemachineManager + ScreenShakeType database for impulse-based screen shake; Billboard runtime component (face the camera); ViewportPositioner editor-time component (place by viewport X/Y + distance with size compensation).",
+  "description": "Camera-relative helpers: CinemachineManager + ScreenShakeType database for impulse-based screen shake; Billboard and DistanceScale runtime components (face the camera, hold a readable size at any distance); ViewportPositioner editor-time component (place by viewport X/Y + distance with size compensation).",
   "keywords": [
     "Camera",
     "Cinemachine",
